@@ -8,4 +8,4 @@ Esse projeto é um exemplo prático de como a Visão Computacional pode ser usad
 - ultralytics
 
 ## Resultado
-![contador-de-chocolate](https://github.com/user-attachments/assets/fe8ac2ef-3827-4b74-a3a5-77af4c167b9a)
+https://github.com/user-attachments/assets/d7f645f7-8f9f-482c-99ef-492edf064af0
