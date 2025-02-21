@@ -25,13 +25,21 @@ while video.isOpened():
         # desenhando a caixa de texto (total de chocolates)
         (comprimento_texto, largura_texto), _ = cv.getTextSize(f'Total = {len(chocolates_contados) + 5}', cv.FONT_HERSHEY_DUPLEX, 1, 2)
         cv.rectangle(frame_reduzido, (0, 0), (comprimento_texto + 65, 50), (255, 255, 255), -1)
-        cv.putText(frame_reduzido, f'Total = {len(chocolates_contados) + 5}', (7, 37), cv.FONT_HERSHEY_DUPLEX, 1.3, (0, 0, 255), 2)
+        cv.putText(frame_reduzido, f'Total = {len(chocolates_contados) + 5}', (7, 37), cv.FONT_HERSHEY_DUPLEX, 1.3, (0, 0, 0), 2)
         
         # desenhando contornos nos chocolates
         for caixa in caixas:
             esquerda, cima, direita, baixo = caixa.xyxy.int().tolist()[0]
             circulo = (esquerda+(direita-esquerda)//2, cima+(baixo-cima)//2)
-            cv.rectangle(frame_reduzido, (esquerda, cima), (direita, baixo), (255, 0, 0), 2)
+            id = str(int(caixa.id))
+
+            # id do chocolate
+            (compr_texto, larg_texto), _ = cv.getTextSize(id, cv.FONT_HERSHEY_DUPLEX, 0.8, 1)
+            caixa_id = cv.rectangle(frame_reduzido, (esquerda, cima - 23), (esquerda + compr_texto, cima), (245, 72, 1), -1)
+            cv.putText(caixa_id, id, (esquerda, cima - 3), cv.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
+
+            # contorno e ponto central do chocolate
+            cv.rectangle(frame_reduzido, (esquerda, cima), (direita, baixo), (245, 72, 1), 2)
             cv.circle(frame_reduzido, circulo, 0, (0, 0, 255), -1)
 
             # realizando a contagem
@@ -43,7 +51,7 @@ while video.isOpened():
         cv.line(frame_reduzido, linha[0], linha[1], (0, 0, 255), 2)
 
         # apresentando os frames
-        cv.imshow('Contador de Chocolate', frame_reduzido)
+        cv.imshow('Contador Industrial', frame_reduzido)
 
         # pressione "q" para finalizar o código
         if cv.waitKey(25) & 0xFF == ord('q'):
