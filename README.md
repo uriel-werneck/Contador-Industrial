@@ -1,11 +1,16 @@
-# Contador-Industrial
+# 📦 Contador-Industrial
 
-## Descrição
-Esse projeto é um exemplo prático de como a Visão Computacional pode ser usada para automatizar tarefas no setor industrial. Neste caso, a contagem de chocolates se movendo em uma esteira. Para a detecção dos chocolates foi usado o modelo yolov8n.pt (nano). Entretanto, esse modelo não possui a capacidade de detectar chocolates de forma nativa. Portanto, usei alguns frames do próprio vídeo para realizar um Aprendizado Supervisionado (o modelo, já treinado, está disponível na pasta "modelos").
+## 📄 Descrição
+Este projeto demonstra o uso prático da Visão Computacional para automatizar tarefas no setor industrial, especificamente na contagem de chocolates em uma esteira. A detecção é realizada utilizando o modelo YOLOv8 Nano (yolov8n.pt).
 
-## Bibliotecas Necessárias
-- opencv-python
-- ultralytics
+Como o modelo base não possui a capacidade de detectar chocolates nativamente, foi necessário realizar um Aprendizado Supervisionado, utilizando frames do próprio vídeo como base de dados. O modelo treinado está disponível na pasta modelos.
 
-## Resultado
-https://github.com/user-attachments/assets/d7f645f7-8f9f-482c-99ef-492edf064af0
+## 🚀 Tecnologias Utilizadas
+- Visão Computacional: OpenCV
+- Detecção de Objetos: YOLOv8 (ultralytics)
+
+## 📦 Instalação das Dependências
+pip install -r requirements.txt
+
+# 📊 Demonstração
+https://github.com/user-attachments/assets/fc2b3efd-904a-47a8-847c-8363e4fbda07
