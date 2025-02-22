@@ -6,8 +6,8 @@ Este projeto demonstra o uso prático da Visão Computacional para automatizar t
 Como o modelo base não possui a capacidade de detectar chocolates nativamente, foi necessário realizar um Aprendizado Supervisionado, utilizando frames do próprio vídeo como base de dados. O modelo treinado está disponível na pasta modelos.
 
 ## 🚀 Tecnologias Utilizadas
-- Visão Computacional: OpenCV
-- Detecção de Objetos: YOLOv8 (ultralytics)
+- **Visão Computacional:** OpenCV
+- **Detecção de Objetos:** YOLOv8 (ultralytics)
 
 ## 📦 Instalação das Dependências
 ```bash
