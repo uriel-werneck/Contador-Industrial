@@ -10,7 +10,9 @@ Como o modelo base não possui a capacidade de detectar chocolates nativamente, 
 - Detecção de Objetos: YOLOv8 (ultralytics)
 
 ## 📦 Instalação das Dependências
+```bash
 pip install -r requirements.txt
+```
 
 # 📊 Demonstração
 https://github.com/user-attachments/assets/fc2b3efd-904a-47a8-847c-8363e4fbda07
