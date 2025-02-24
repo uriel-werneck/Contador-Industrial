@@ -12,7 +12,7 @@ while video.isOpened():
 
     if rect:
         # reduzindo o tamanho da imagem
-        frame_reduzido = cv.resize(frame, (1000, 700))
+        frame_reduzido = cv.resize(frame, (1280, 720))
 
         # variaveis que vão ajudar a criar os contornos
         largura, comprimento, _ = frame_reduzido.shape
