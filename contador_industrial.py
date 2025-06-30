@@ -4,7 +4,7 @@ from ultralytics import YOLO
 # importando o modelo customizado e o vídeo usado como exemplo
 modelo = YOLO('./modelos/detector_de_chocolate.pt')
 video = cv.VideoCapture('./videos/chocolates.mp4')
-chocolates_contados = []
+chocolates_contados = {}
 
 # faz um looping em cada frame do vídeo
 while video.isOpened():
@@ -44,8 +44,9 @@ while video.isOpened():
 
             # realizando a contagem
             if linha[0][0] < circulo[0] < linha[1][0] and linha[0][1] - 5 < circulo[1] < linha[0][1] + 5:
-                if caixa.id not in chocolates_contados:
-                    chocolates_contados.append(caixa.id)
+                id_in_str = str(int(caixa.id))
+                if id_in_str not in chocolates_contados:
+                    chocolates_contados[id_in_str] = True
 
         # desenhando a linha de contagem
         cv.line(frame_reduzido, linha[0], linha[1], (0, 0, 255), 2)
